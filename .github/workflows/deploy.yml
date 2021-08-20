@@ -16,3 +16,4 @@ jobs:
       - run: npm ci && npm run publish
         env:
           GITHUB_PERSONAL_TOKEN: ${{secrets.GITHUB_PERSONAL_TOKEN}}
+          REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
