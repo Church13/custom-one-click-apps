@@ -82,9 +82,4 @@ echo "#############################################"
 echo "######### Commit and push ###" 
 echo "#############################################" 
 sleep 1s
-git config --global user.name "${GITHUB_ACTOR}"
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 echo `date` >> forcebuild.date
-git add -A 
-git commit -m 'Deploy to GitHub Pages' 
-git push $REMOTE_REPO $REMOTE_BRANCH:$REMOTE_BRANCH 
