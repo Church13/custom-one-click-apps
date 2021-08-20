@@ -48,7 +48,6 @@ REPONAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)"
 
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)" 
 GHIO="${OWNER}.github.io"
-echo $GHIO
 if [[ "$REPONAME" == "$GHIO" ]]; then
   REMOTE_BRANCH="master"
 else
@@ -83,13 +82,9 @@ echo "#############################################"
 echo "######### Commit and push ###" 
 echo "#############################################" 
 sleep 1s
-
-echo ${GITHUB_ACTOR}
-echo ${INPUT_REPO}
-
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 echo `date` >> forcebuild.date
 git add -A 
 git commit -m 'Deploy to GitHub Pages' 
-git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git" gh-pages
+git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}.git" gh-pages
