@@ -87,4 +87,4 @@ git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 echo `date` >> forcebuild.date
 git add -A 
 git commit -m 'Deploy to GitHub Pages' 
-git push origin gh-pages
+git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git" gh-pages
