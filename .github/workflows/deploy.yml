@@ -16,9 +16,3 @@ jobs:
       - run: npm ci && npm run publish
         env:
           GITHUB_PERSONAL_TOKEN: ${{secrets.GITHUB_PERSONAL_TOKEN}}
-      - run: |
-          git add -A
-          git config --global user.name 'Church13'
-          git config --global user.email 'church13@users.noreply.github.com'
-          git commit -am "Automatic update"
-          git push origin gh-pages
