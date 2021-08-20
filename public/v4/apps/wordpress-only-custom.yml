@@ -1,6 +1,6 @@
 captainVersion: 4
 services:
-    $$cap_appname-wordpress:
+    $$cap_appname:
         image: ghcr.io/church13/docker-wp-custom:$$cap_wp_version
         volumes:
             - $$cap_appname-wp-data:/var/www/html
@@ -45,7 +45,7 @@ caproverOneClickApp:
 
             Note: This app is intended for advanced users who'd like to have a central DB in a single container for multiple WP's. You should start by configuring your DB first and then comeback with all the DB Information.
         end: >-
-            Wordpress is deployed and available as $$cap_appname-wordpress . 
+            Wordpress is deployed and available as $$cap_appname . 
 
             IMPORTANT: It will take up to 2 minutes for WordPress to be ready. Before that, you might see a 502 error page.
 
